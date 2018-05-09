@@ -62,6 +62,21 @@ class Queue(object):
 			p = p.next
 		print("")
 
+	def delete(self):
+		'''销毁队列'''
+		p = self.front
+		q = p.next
+		while q != None:
+			del p
+			p = q
+			q = p.next
+		del p
+		del q
+		self.front = None
+		self.rear = None
+		print("Delete queue successfully!")
+
+
 if '__main__' == __name__:
 	q =	Queue()
 	List = [1,2,3,4]
@@ -74,8 +89,6 @@ if '__main__' == __name__:
 	print("出队列：", end = " ")
 	q.deQueue()
 	q.printQue()
-	print("进队列(data=5)：", end = " ")
-	q.inQueue(5)
-	q.printQue()	
 	print("队列大小为：", q.size())
+	q.delete()
 		
