@@ -43,6 +43,17 @@ class Stack(object):
 			print(k, end = " ")
 		print("")
 
+	def delete(self):
+		'''销毁栈'''
+		k = len(self.items)
+		i = 0
+		while k > 0:
+			del self.items[0]
+			k -= 1
+		del k
+		del i
+		print("delete Stack successfully!")
+
 if '__main__' == __name__ :
 	List = [1,2,3,4,5,6]
 	l = Stack()
@@ -60,6 +71,7 @@ if '__main__' == __name__ :
 	l.push(10)
 	l.printStack()
 	print("栈顶元素为：%d" % l.peek())
+	l.delete()
 
 
 
