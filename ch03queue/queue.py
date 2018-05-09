@@ -28,6 +28,16 @@ class Queue(object):
 		'''输出队列大小'''
 		return len(self.items)
 
+	def delete(self):
+		'''销毁队列'''
+		k = len(self.items)
+		i = 0
+		while k > 0:
+			del self.items[i]
+			k -= 1
+		del k
+		del i
+		print("Delete queue successfully!")
 
 if '__main__' == __name__:
 	q =	Queue()
@@ -39,9 +49,8 @@ if '__main__' == __name__:
 	print("队列大小为：", q.size())
 	q.deQueue()
 	print("出队列：", q.items)
-	q.inQueue(5)
-	print("进队列(data=5)：", q.items)
 	print("队列大小为：", q.size())
+	q.delete()
 
 		
 
